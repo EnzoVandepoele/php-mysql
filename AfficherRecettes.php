@@ -3,22 +3,49 @@
         [
             'title' => 'Cassoulet',
             'recipe' => 'Etape 1 : des flageolets !',
-            'author' => 'mickael.andrieu@exemple.com',
+            'author' => ['email' => 'mickael.andrieu@exemple.com', 'full_name' => 'Mickaël Andrieu', 'age' => '34'],
             'is_enabled' => true,
         ],
         [
             'title' => 'Couscous',
             'recipe' => '',
-            'author' => 'mickael.andrieu@exemple.com',
+            'author' => ['email' => 'mickael.andrieu@exemple.com', 'full_name' => 'Mickaël Andrieu', 'age' => '34'],
             'is_enabled' => false,
         ],
         [
             'title' => 'Escalope milanaise',
             'recipe' => 'Etape 1 : prenez une belle escalope',
-            'author' => 'mathieu.nebra@exemple.com',
+            'author' => ['email' => 'mathieu.nebra@exemple.com', 'full_name' => 'Mathieu Nebra', 'age' => '34'],
             'is_enabled' => true,
         ]
-    ]
+    ];
+
+    function isValidRecipe(array $recipe) : bool {
+        if (array_key_exists('is_enabled', $recipe)) {
+            $isEnabled = $recipe['is_enabled'];
+        } else {
+            $isEnabled = false;
+        }
+
+        return $isEnabled;
+    }
+
+    function getRecipes(array $recipes) : array {
+        $validRecipes = [];
+
+        foreach($recipes as $recipe) {
+            if (isValidRecipe($recipe)) {
+                $validRecipes[] = $recipe;
+            }
+        }
+
+        return $validRecipes;
+    }
+
+    function displayAuthor(array $author) : string
+    {
+        return $author['full_name'] . '(' . $author['age'] . ' ans)';
+    }
 ?>
 
  <!DOCTYPE html>
@@ -40,13 +67,13 @@
         </style>
 
         <ul>
-            <h1> Affichage des recettes </h1>
+            <h1> Liste des recettes de cuisine </h1>
             <?php
-                foreach ($recipes as $recipe) {
-                    if ($recipe['is_enabled'] == true) {
+                foreach(getRecipes($recipes) as $recipe) {
+                    if (isValidRecipe($recipe)) {
                         echo "<div class='title'>" . $recipe['title'] . '</div>';
-                        echo $recipe['recipe'] . '<br>';
-                        echo '<i>' . $recipe['author'] . '</i>' . '<br>' . '<br>';
+                        // echo $recipe['recipe'] . '<br>';
+                        echo '<i>' . displayAuthor($recipe['author']) . '</i>' . '<br>' . '<br>';
                     }
                 }
             ?>

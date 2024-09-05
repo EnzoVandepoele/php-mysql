@@ -1,9 +1,24 @@
-<?php
-// Déclaration du tableau des recettes
-$recipes = [
-    ['Cassoulet','[...]','mickael.andrieu@exemple.com',true,],
-    ['Couscous','[...]','mickael.andrieu@exemple.com',false,],
-];
+<?php 
+    $recipes = [
+        [
+            'title' => 'Cassoulet',
+            'recipe' => 'Etape 1 : des flageolets !',
+            'author' => 'mickael.andrieu@exemple.com',
+            'is_enabled' => true,
+        ],
+        [
+            'title' => 'Couscous',
+            'recipe' => '',
+            'author' => 'mickael.andrieu@exemple.com',
+            'is_enabled' => false,
+        ],
+        [
+            'title' => 'Escalope milanaise',
+            'recipe' => 'Etape 1 : prenez une belle escalope',
+            'author' => 'mathieu.nebra@exemple.com',
+            'is_enabled' => true,
+        ]
+    ]
 ?>
 
  <!DOCTYPE html>
@@ -13,12 +28,28 @@ $recipes = [
     </head>
     
     <body>
+        <style>
+            body {
+                font-family: monospace;
+            }
+
+            .title {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        </style>
+
         <ul>
-            <?php for ($lines = 0; $lines <= 1; $lines++): ?>
-            <li>
-                <?php echo $recipes[$lines][0] . ' (' . $recipes[$lines][2] . ')';?>
-            </li>
-            <?php endfor;?>
+            <h1> Affichage des recettes </h1>
+            <?php
+                foreach ($recipes as $recipe) {
+                    if ($recipe['is_enabled'] == true) {
+                        echo "<div class='title'>" . $recipe['title'] . '</div>';
+                        echo $recipe['recipe'] . '<br>';
+                        echo '<i>' . $recipe['author'] . '</i>' . '<br>' . '<br>';
+                    }
+                }
+            ?>
         </ul>
     </body>
  </html>

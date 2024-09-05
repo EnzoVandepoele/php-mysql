@@ -18,7 +18,7 @@ $recipes = [
             <li>
                 <?php echo $recipes[$lines][0] . ' (' . $recipes[$lines][2] . ')';?>
             </li>
-            <?php endfor; ?>
+            <?php endfor;?>
         </ul>
     </body>
  </html>

@@ -1,10 +1,9 @@
-<nav id="menu">
-    <div class="element_menu">
-        <h3>Titre menu</h3>
-        <ul>
-            <li><a href="page1.html">Lien</a></li>
-            <li><a href="page2.html">Lien</a></li>
-            <li><a href="page3.html">Lien</a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Site de recettes</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation" style="display: flex;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </div>
 </nav>

@@ -1,5 +1,8 @@
-<footer class="navbar-expand-lg navbar-light bg-light mt-auto" style="padding: 10px 0px; text-align: center;">
-    <div class="container">
-        <p>© 2021 Copyright: <u>Alexandre Brabant</u></p>
-    </div>
+<!-- footer.php -->
+<!-- footer.php -->
+<footer class="bg-light text-center text-lg-start mt-auto">
+  <div class="text-center p-3">
+    © 2021 Copyright:
+    <a class="text-dark">Alexandre Brabant</a>
+  </div>
 </footer>

@@ -14,6 +14,15 @@
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
 
+    <?php
+        if (!isset($_GET['email']) || !isset($_GET['message']))
+        {
+            echo('<h1>Il faut un email et un message pour soumettre le formulaire.</h1>');
+            // Arrête l'exécution de PHP
+            return;
+        }
+    ?>
+
     <?php include_once('header.php'); ?>
         <h1>Site de recettes</h1>
 

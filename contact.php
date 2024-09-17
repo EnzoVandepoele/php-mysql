@@ -34,7 +34,7 @@
             <!-- Fin ajout du champ -->
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </form>
-        <br/>
+        <br />
     </div>
 
     <?php include_once('footer.php'); ?>

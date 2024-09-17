@@ -12,7 +12,7 @@ function isValidRecipe(array $recipe) : bool
     return $isEnabled;
 }
 
-function displayAuthor(string $authorEmail, array $users) : string
+function display_author(string $authorEmail, array $users) : string
 {
     for ($i = 0; $i < count($users); $i++) {
         $author = $users[$i];
@@ -22,7 +22,7 @@ function displayAuthor(string $authorEmail, array $users) : string
     }
 }
 
-function getRecipes(array $recipes) : array
+function get_recipes(array $recipes) : array
 {
     $validRecipes = [];
 
